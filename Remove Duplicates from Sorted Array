@@ -1,0 +1,20 @@
+public class Solution {
+    public int RemoveDuplicates(int[] nums) {
+        int k = 1;
+
+        for (int i = 1; i < nums.Length; i++)
+        {
+            Console.WriteLine($"i={i}, nums[i]={nums[i]}, nums[i-1]={nums[i-1]}");
+
+            if (nums[i] != nums[i - 1])
+            {
+                nums[k] = nums[i];
+                k++;
+                Console.WriteLine($"→ Phần tử mới! Ghi vào nums[{k - 1}] = {nums[i]}");
+            }
+        }
+
+        Console.WriteLine($"Tổng số phần tử duy nhất: {k}");
+        return k;
+    }
+}
